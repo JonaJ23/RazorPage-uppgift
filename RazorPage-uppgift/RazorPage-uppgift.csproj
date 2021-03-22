@@ -7,17 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Pages\Events\**" />
-    <Compile Remove="Pages\MyEvents\**" />
-    <Content Remove="Pages\Events\**" />
-    <Content Remove="Pages\MyEvents\**" />
-    <EmbeddedResource Remove="Pages\Events\**" />
-    <EmbeddedResource Remove="Pages\MyEvents\**" />
-    <None Remove="Pages\Events\**" />
-    <None Remove="Pages\MyEvents\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.4">
@@ -31,6 +20,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Events\" />
+    <Folder Include="Pages\MyEvents\" />
   </ItemGroup>
 
 </Project>
