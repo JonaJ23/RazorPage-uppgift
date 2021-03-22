@@ -7,7 +7,7 @@ namespace RazorPage_uppgift.Models
 {
     public class Organizer
     {
-        public int OrganizerID { get; set; }
+        public int OrganizerID { get; set; } // PK
         public string Name { get; set; }
         public string Email { get; set; }
         public ICollection<Event> Event { get; set; }

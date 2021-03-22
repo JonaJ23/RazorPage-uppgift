@@ -7,7 +7,7 @@ namespace RazorPage_uppgift.Models
 {
     public class Event
     {
-        public int EventID { get; set; }
+        public int EventID { get; set; } // PK
         public Organizer Organizer { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }

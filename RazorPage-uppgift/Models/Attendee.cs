@@ -7,7 +7,7 @@ namespace RazorPage_uppgift.Models
 {
     public class Attendee
     {
-        public int AttendeeID { get; set; }
+        public int AttendeeID { get; set; } // PK
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
