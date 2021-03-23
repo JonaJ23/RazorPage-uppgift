@@ -29,6 +29,8 @@ namespace RazorPage_uppgift
 
             services.AddDbContext<RazorPage_uppgiftContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("RazorPage_uppgiftContext")));
+
+            services.AddDatabaseDeveloperPageExceptionFilter();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

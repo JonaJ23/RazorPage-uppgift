@@ -8,9 +8,9 @@ namespace RazorPage_uppgift.Models
     public class Attendee
     {
         public int AttendeeID { get; set; } // PK
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
-        public ICollection<Event> Event { get; set; }
+        public string PhoneNumber { get; set; }
+        public ICollection<JoinedEvent> JoinedEvents { get; set; }
     }
 }

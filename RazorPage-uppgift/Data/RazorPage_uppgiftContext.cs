@@ -14,6 +14,17 @@ namespace RazorPage_uppgift.Data
         {
         }
 
-        public DbSet<RazorPage_uppgift.Models.Event> Event { get; set; }
+        public DbSet<Attendee> Attendees { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<JoinedEvent> JoinedEvents { get; set; }
+        public DbSet<Organizer> Organizers { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Attendee>().ToTable("Attendee");
+            modelBuilder.Entity<Event>().ToTable("Event");
+            modelBuilder.Entity<JoinedEvent>().ToTable("JoinedEvent");
+            modelBuilder.Entity<Organizer>().ToTable("Organizer");
+        }
     }
 }

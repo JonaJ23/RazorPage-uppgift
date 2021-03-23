@@ -10,11 +10,11 @@ using RazorPage_uppgift.Models;
 
 namespace RazorPage_uppgift.Pages.Events
 {
-    public class EventsListModel : PageModel
+    public class IndexModel : PageModel
     {
         private readonly RazorPage_uppgift.Data.RazorPage_uppgiftContext _context;
 
-        public EventsListModel(RazorPage_uppgift.Data.RazorPage_uppgiftContext context)
+        public IndexModel(RazorPage_uppgift.Data.RazorPage_uppgiftContext context)
         {
             _context = context;
         }
@@ -23,7 +23,7 @@ namespace RazorPage_uppgift.Pages.Events
 
         public async Task OnGetAsync()
         {
-            Event = await _context.Event.ToListAsync();
+            Event = await _context.Events.ToListAsync();
         }
     }
 }

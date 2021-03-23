@@ -1,11 +1,11 @@
 ﻿@page
-@model RazorPage_uppgift.Pages.Events.EventsDetailsModel
+@model RazorPage_uppgift.Pages.Events.DetailsModel
 
 @{
-    ViewData["Title"] = "EventsDetails";
+    ViewData["Title"] = "Details";
 }
 
-<h1>EventsDetails</h1>
+<h1>Details</h1>
 
 <div>
     <h4>Event</h4>
@@ -24,22 +24,16 @@
             @Html.DisplayFor(model => model.Event.Description)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Event.Date)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Event.Date)
-        </dd>
-        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Event.Address)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Event.Address)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Event.SpotsAvailable)
+            @Html.DisplayNameFor(model => model.Event.Date)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Event.SpotsAvailable)
+            @Html.DisplayFor(model => model.Event.Date)
         </dd>
     </dl>
 </div>

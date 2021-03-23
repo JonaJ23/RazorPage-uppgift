@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using RazorPage_uppgift.Data;
 using RazorPage_uppgift.Models;
 
-namespace RazorPage_uppgift.Pages.MyEvents
+namespace RazorPage_uppgift.Pages.Events
 {
     public class DetailsModel : PageModel
     {
@@ -28,7 +28,7 @@ namespace RazorPage_uppgift.Pages.MyEvents
                 return NotFound();
             }
 
-            Event = await _context.Event.FirstOrDefaultAsync(m => m.EventID == id);
+            Event = await _context.Events.FirstOrDefaultAsync(m => m.EventID == id);
 
             if (Event == null)
             {
