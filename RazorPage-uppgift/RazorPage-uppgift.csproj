@@ -23,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Attendees\" />
     <Folder Include="Pages\Organizers\" />
   </ItemGroup>
 
