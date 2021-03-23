@@ -32,10 +32,10 @@
     @if (!Model.EventIsListed)
     {
         <a asp-page="../JoinedEvents/Create" asp-route-id="@Model.Event.EventID" class="btn btn-primary btn-group-lg">Join Event</a>
-    } |
+    } 
     @if (Model.EventIsListed)
     {
-        <p>You have already signed up for this event.</p>
+        <p>You have signed up for this event.</p>
     }
     <a asp-page="./Index">Back to List</a>
 </div>

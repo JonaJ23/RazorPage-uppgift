@@ -20,8 +20,8 @@ namespace RazorPage_uppgift.Pages.Events
         }
 
         public Event Event { get; set; }
-
         public bool EventIsListed { get; set; }
+
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,7 +30,16 @@ namespace RazorPage_uppgift.Pages.Events
                 return NotFound();
             }
 
-            Event = await _context.Events.FirstOrDefaultAsync(m => m.EventID == id);
+
+            EventIsListed = await _context.JoinedEvents
+                .Where(e => e.EventID == id)
+                .FirstOrDefaultAsync(a => a.AttendeeID == 1)
+                == default ? false : true;
+
+            Event = await _context.Events
+                .Include(e => e.Organizer)
+                .FirstOrDefaultAsync(m => m.EventID == id);
+
 
             if (Event == null)
             {
