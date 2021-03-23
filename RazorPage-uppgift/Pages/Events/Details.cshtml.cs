@@ -21,6 +21,8 @@ namespace RazorPage_uppgift.Pages.Events
 
         public Event Event { get; set; }
 
+        public bool EventIsListed { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)

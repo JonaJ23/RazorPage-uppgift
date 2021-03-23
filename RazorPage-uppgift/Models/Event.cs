@@ -13,5 +13,6 @@ namespace RazorPage_uppgift.Models
         public string Address { get; set; }
         public DateTime Date { get; set; }
         public Organizer Organizer { get; set; }
+        public int OrganizerID { get; set; }
     }
 }

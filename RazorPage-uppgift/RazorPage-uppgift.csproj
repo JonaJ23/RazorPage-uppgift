@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <Folder Include="Pages\Attendees\" />
-    <Folder Include="Pages\JoinedEvents\" />
     <Folder Include="Pages\Organizers\" />
   </ItemGroup>
 
