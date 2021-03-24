@@ -22,9 +22,14 @@
             <th>
                 @Html.DisplayNameFor(model => model.Event[0].Date)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].SpotsAvailable) 
+            </th>
             <th></th>
         </tr>
     </thead>
+
+
     <tbody>
 @foreach (var item in Model.Event) {
         <tr>
@@ -41,9 +46,19 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                <a asp-page="./Details" asp-route-id="@item.EventID" class="btn btn-primary btn-block">Join Event</a>
+                @Html.DisplayFor(modelItem => item.SpotsAvailable)
+            </td>
+            <td>
+                @if (item.SpotsAvailable == 0)
+                {
+                    <a asp-page="./Details" asp-route-id="@item.EventID" class="btn btn-dark btn-block disabled">Fully booked</a>
+                }
+                @if (item.SpotsAvailable > 0)
+                {
+                    <a asp-page="./Details" asp-route-id="@item.EventID" class="btn btn-primary btn-block">Join Event</a>
+                }
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

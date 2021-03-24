@@ -22,7 +22,7 @@ namespace RazorPage_uppgift
             host.Run();
         }
         
-        private static void CreateDbIfNotExists(IHost host)
+        private static void CreateDbIfNotExists(IHost host) // Checks if the database contains any data and will initialize seeding if not.
         {
             using (var scope = host.Services.CreateScope())
             {
@@ -31,8 +31,6 @@ namespace RazorPage_uppgift
                 {
                     var context = services.GetRequiredService<RazorPage_uppgiftContext>();
                     context.Database.EnsureCreated();
-
-                    // Checks if the database contains any data and will initialize seeding if not.
 
                     Seeding.Initialize(context);
                 }

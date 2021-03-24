@@ -58,10 +58,14 @@ namespace RazorPage_uppgift.Pages.JoinedEvents
                 return NotFound();
             }
 
+
             JoinedEvent.Attendee = _context.Attendees.Where(a => a.AttendeeID == 1).First();
             JoinedEvent.Event = _context.Events.Where(e => e.EventID == id).First();
 
+
             _context.JoinedEvents.Add(JoinedEvent);
+            _context.Events.Where(e => e.EventID == id).First().SpotsAvailable--;
+
 
             await _context.SaveChangesAsync();
 

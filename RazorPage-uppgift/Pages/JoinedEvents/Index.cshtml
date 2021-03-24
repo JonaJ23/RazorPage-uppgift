@@ -19,8 +19,8 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
 
+    <tbody>
 @foreach (var item in Model.JoinedEvent) {
         <tr>
             <td>
@@ -33,6 +33,6 @@
                 <a asp-page="./Delete" asp-route-id="@item.JoinedEventID" class="btn btn-danger">Cancel</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>
