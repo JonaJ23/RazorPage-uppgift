@@ -12,15 +12,13 @@ namespace RazorPage_uppgift.Pages.JoinedEvents
 {
     public class IndexModel : PageModel
     {
-        private readonly RazorPage_uppgift.Data.RazorPage_uppgiftContext _context;
-
-        public IndexModel(RazorPage_uppgift.Data.RazorPage_uppgiftContext context)
+        private readonly RazorPage_uppgiftContext _context;
+        public IndexModel(RazorPage_uppgiftContext context)
         {
             _context = context;
         }
 
         public IList<JoinedEvent> JoinedEvent { get;set; }
-
         public async Task OnGetAsync()
         {
             JoinedEvent = await _context.JoinedEvents

@@ -12,9 +12,9 @@ namespace RazorPage_uppgift.Pages.JoinedEvents
 {
     public class DeleteModel : PageModel
     {
-        private readonly RazorPage_uppgift.Data.RazorPage_uppgiftContext _context;
+        private readonly RazorPage_uppgiftContext _context;
 
-        public DeleteModel(RazorPage_uppgift.Data.RazorPage_uppgiftContext context)
+        public DeleteModel(RazorPage_uppgiftContext context)
         {
             _context = context;
         }
@@ -30,8 +30,11 @@ namespace RazorPage_uppgift.Pages.JoinedEvents
             }
 
             JoinedEvent = await _context.JoinedEvents
-                .Include(j => j.Attendee)
-                .Include(j => j.Event).FirstOrDefaultAsync(m => m.JoinedEventID == id);
+            .Where(re => re.JoinedEventID == id).FirstOrDefaultAsync();
+
+            JoinedEvent = await _context.JoinedEvents
+            .Include(j => j.Attendee)
+            .Include(j => j.Event).FirstOrDefaultAsync(m => m.JoinedEventID == id);
 
             if (JoinedEvent == null)
             {
@@ -39,6 +42,7 @@ namespace RazorPage_uppgift.Pages.JoinedEvents
             }
             return Page();
         }
+
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
@@ -51,10 +55,10 @@ namespace RazorPage_uppgift.Pages.JoinedEvents
 
             if (JoinedEvent != null)
             {
+                _context.Events.Where(e => e.EventID == JoinedEvent.EventID).First().SpotsAvailable++;
                 _context.JoinedEvents.Remove(JoinedEvent);
                 await _context.SaveChangesAsync();
             }
-
             return RedirectToPage("./Index");
         }
     }

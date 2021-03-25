@@ -7,7 +7,7 @@
 
 <h2>Are you sure you want to cancel your participation?</h2>
 <div>
-    <hr/>
+    <hr />
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.JoinedEvent.Event)
@@ -22,10 +22,10 @@
             @Html.DisplayFor(model => model.JoinedEvent.Event.Date)
         </dd>
     </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="JoinedEvent.JoinedEventID" />
-        <input type="submit" value="Cancel" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
-</div>
+
+        <form method="post">
+            <input type="hidden" asp-for="JoinedEvent.JoinedEventID" />
+            <input type="submit" value="Cancel" class="btn btn-danger" /> |
+            <a asp-page="./Index">Back to List</a>
+        </form>
+    </div>
