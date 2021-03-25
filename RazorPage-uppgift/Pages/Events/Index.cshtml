@@ -51,11 +51,11 @@
             <td>
                 @if (item.SpotsAvailable == 0)
                 {
-                    <a asp-page="./Details" asp-route-id="@item.EventID" class="btn btn-dark btn-block disabled">Fully booked</a>
+                    <a asp-page="./Details" asp-route-id="@item.EventID" class="btn btn-dark btn-block disabled">Join</a>
                 }
                 @if (item.SpotsAvailable > 0)
                 {
-                    <a asp-page="./Details" asp-route-id="@item.EventID" class="btn btn-primary btn-block">Join Event</a>
+                    <a asp-page="./Details" asp-route-id="@item.EventID" class="btn btn-primary btn-block">Join</a>
                 }
             </td>
         </tr>

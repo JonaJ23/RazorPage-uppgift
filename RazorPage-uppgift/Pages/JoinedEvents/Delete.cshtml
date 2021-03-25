@@ -9,17 +9,37 @@
 <div>
     <hr />
     <dl class="row">
+
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.JoinedEvent.Event)
+            @Html.DisplayNameFor(model => model.JoinedEvent.Event.Title)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.JoinedEvent.Event.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JoinedEvent.Event.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JoinedEvent.Event.Address)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.JoinedEvent.Event.Date)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.JoinedEvent.Event.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JoinedEvent.Event.SpotsAvailable)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.JoinedEvent.Event.SpotsAvailable > 0)
+            {
+                @Html.DisplayFor(model => model.JoinedEvent.Event.SpotsAvailable)
+            }
+            else
+            {
+                <p>Fully booked</p>
+            }
         </dd>
     </dl>
 

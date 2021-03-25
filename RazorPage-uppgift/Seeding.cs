@@ -49,28 +49,33 @@ namespace RazorPage_uppgift
                 Organizer=organizers[0], 
                 Description="Doing fun stuff and things that everybody likes.",
                 Address="20 Fun Street, Bean City", 
-                Date=DateTime.Now},
+                Date=DateTime.Parse("2021-06-19 12:00"),
+                SpotsAvailable=0},
+
 
             new Event{
                 Title="Awful event", 
                 Organizer=organizers[0], 
                 Description="Come to this awful event if you dare.",
-                Address="127 Awful Ave, Bean City", 
-                Date=DateTime.Now},
+                Address="127 Awful Ave, Bean City",
+                Date=DateTime.Parse("2021-04-01 14:00"),
+                SpotsAvailable=97},
 
             new Event{
                 Title="Llama spitting", 
                 Organizer=organizers[1], 
                 Description="Wanna get spit by a Llama? Welcome to Llama Street.",
-                Address="Llama Street, Bean City", 
-                Date=DateTime.Now},
+                Address="Llama Street, Bean City",
+                Date=DateTime.Parse("2021-05-11 12:00"),
+                SpotsAvailable=18},
 
             new Event{
                 Title="Dankey Kongs banana party",
                 Organizer=organizers[1],
                 Description="Lots of bananas collected by an infamous ape will be shared to everyone who attends.",
                 Address="100 Jungle Lane, Bananaland",
-                Date=DateTime.Now},
+                Date=DateTime.Parse("2021-05-03 18:00"),
+                SpotsAvailable=1},
             };
             context.AddRange(events);
             context.SaveChanges();
