@@ -4,6 +4,10 @@ ASP.NET Core är en fri programvara med öppen källkod som används för att sk
 dynamiska webbsidor med bl.a. användning av cloud-lagring och Razor Pages.
 Förrutom Windows så är ASP.NET Core även kompatibel med Linux och MacOS.
 
+Razor Pages är en känd programmeringssyntax som tillhör ASP.NET och kan generera
+webbapplikationer med egen grundläggande hemsida som baseras på 
+en C# och HTML-konstruktion. 
+
 En Razor Pages applikation består oftast av flera modelklasser 
 som lagrar properties i en databas med hjälp av olika tabeller. 
 Dessa tabeller har alltid en PRIMARY KEY som används för 
