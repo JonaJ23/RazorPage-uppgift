@@ -4,16 +4,12 @@ ASP.NET Core är en fri programvara med öppen källkod som används för att sk
 dynamiska webbsidor med bl.a. användning av cloud-lagring och Razor Pages.
 Förrutom Windows så är ASP.NET Core även kompatibel med Linux och MacOS.
 
-Razor Pages är en känd programmeringssyntax som tillhör ASP.NET och kan generera
-webbapplikationer med egen grundläggande hemsida som baseras på 
-en C# och HTML-konstruktion. 
-
-En Razor Pages applikation består oftast av flera modelklasser 
-som lagrar properties i en databas med hjälp av olika tabeller. 
-Dessa tabeller har alltid en PRIMARY KEY som används för 
-identifikation. Om tabellerna ska sammanlänkas så behövs 
-också en FOREIGN KEY som använder varandras ID (PRIMARY KEY) 
-för att kommuniceras.
+Razor-pages som används i ASP .NET Core består av en kombination av programspråk (C# och HTML), när appen körs omvandlas koden dock
+till bara HTML. När vi skapar en Razor Page så får vi både en .cshtml-fil (content-page) och cshtml.cs-fil (page-model), dessa är sammanlänkade 
+genom att content-page avgör vilken model som används, ett exempel är: "@model IndexModel" nästan längst upp i cshtml-filen som är 
+tillhörande en page-model för Index. Notera att '@'-tecknet används för att skriva C# kod i HTML kod.
+Sammanfattat är content-page sidan som använder HTML-språk medans page-model består av C# kod som används för att skapa 
+properties för att sedan kommas åt i content-page.
 
 En MVC applikation styrs av tre olika delar: Model, View och Controller.
 Alla tre fungerar i en slags cirkulation.
